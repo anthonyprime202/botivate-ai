@@ -41,6 +41,11 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+@app.get("/")
+async def root():
+    return {"status": "ok"}
+
+
 @app.post("/chat")
 async def chat_with_agent(request: ChatRequest):
     """
