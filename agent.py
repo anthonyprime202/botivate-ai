@@ -115,6 +115,12 @@ def generate_query_node(state: AgentState):
     The query should work on the given schema.
     {schema}
     
+    --- Table Descriptions ---
+    - The "Checklist" table contains a list of general tasks or to-do items.
+    - The "Delegation" table tracks tasks that have been assigned or delegated to specific people.
+    - When a user asks about "tasks", they are referring to entries in either the "Checklist" or "Delegation" table. You must query one of these tables. DO NOT query a table named "tasks".
+    ------------------------
+    
     --- Data Dictionary ---
     - The "Status" column: 'Completed', 'Yes', 'Done' all mean the task is complete.
     - The "Priority" column: 'High', 'Urgent', 'H' all mean high priority. 'Low' and 'L' mean low priority.
