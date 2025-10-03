@@ -105,13 +105,14 @@ def handle_conversation_node(state: AgentState):
 def generate_query_node(state: AgentState):
     """
     Takes the user's question and chat history, generates a SQL query,
-    and adds it to the state.
+    and adds it to the state, based on provided schema.
     """
 
     print("--- Generating SQL Query ---")
 
     system_prompt = """You are an AI expert in writing SQLite queries.
     Given a user question and conversation history, create a syntactically correct SQLite query.
+    The query should work on the given schema.
     {schema}
     
     --- Data Dictionary ---
